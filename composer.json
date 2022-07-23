@@ -1,0 +1,38 @@
+{
+    "name": "xylemical/code-generator",
+    "type": "library",
+    "license": "MIT",
+    "description": "Converts the object model into code.",
+    "keywords": [
+        "php",
+        "code generator"
+    ],
+    "homepage": "https://github.com/xylemical/code-generator",
+    "autoload": {
+        "psr-4": {
+            "Xylemical\\Code\\Generator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Xylemical\\Code\\Generator\\": "tests/src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "xylemical/code": "dev-master",
+        "xylemical/token": "dev-master"
+    },
+    "require-dev": {
+        "xylemical/composer-dev-bundle": "^0.1.0"
+    },
+    "scripts": {
+        "tests": "vendor/bin/phpunit && vendor/bin/phpstan analyse && vendor/bin/phpcs",
+        "test-coverage": "php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html report"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    }
+}
